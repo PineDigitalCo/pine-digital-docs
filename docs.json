@@ -1,0 +1,179 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Pine Digital",
+  "colors": {
+    "primary": "#6B9B7A",
+    "light": "#6B9B7A",
+    "dark": "#6B9B7A"
+  },
+  "favicon": {
+    "light": "/images/pine-digital-favicon.svg",
+    "dark": "/images/pine-digital-favicon.svg"
+  },
+  "navigation": {
+    "pages": [
+      {
+        "group": "Getting Started",
+        "pages": [
+          "index",
+          "quickstart"
+        ]
+      }
+    ],
+    "groups": [
+      {
+        "group": "Getting Started",
+        "pages": [
+          "index"
+        ]
+      },
+      {
+        "group": "Plugins",
+        "icon": "plug",
+        "pages": [
+          "untitled-page",
+          {
+            "group": "Kinsta Enhancer",
+            "pages": [
+              "kinsta-enhancer/get-started"
+            ]
+          },
+          {
+            "group": "Perfmatters Enhancer",
+            "pages": [
+              "perfmatters-enhancer/get-started"
+            ]
+          },
+          {
+            "group": "RafflePress Enhancer",
+            "pages": [
+              "rafflepress-enhancer/get-started",
+              {
+                "group": "Modules",
+                "pages": [
+                  "rafflepress-enhancer/modules/fluentcrm"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "group": "Changelogs",
+        "icon": "history",
+        "pages": [
+          "rafflepress-enhancer-changelog",
+          "kinsta-enhancer-changelog",
+          "fluentcart-enhancer-changelog",
+          "perfmatters-enhancer-changelog"
+        ]
+      }
+    ]
+  },
+  "logo": {
+    "light": "/images/pine-digital-favicon.svg",
+    "dark": "/images/pine-digital-favicon.svg"
+  },
+  "navbar": {
+    "links": [
+      {
+        "href": "https://pinedigital.co",
+        "label": "Pine Digital"
+      },
+      {
+        "label": "Support",
+        "href": "mailto:hello@pinedigital.co"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Dashboard",
+      "href": "https://app.mintlify.com"
+    }
+  },
+  "contextual": {
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp",
+      "cursor",
+      "vscode"
+    ]
+  },
+  "footer": {
+    "socials": {
+      "x": "https://x.com/PineDigitalCo",
+      "github": "https://github.com/PineDigitalCo",
+      "linkedin": "https://www.linkedin.com/company/pinedigitalco"
+    },
+    "links": [
+      {
+        "header": "Company",
+        "items": [
+          {
+            "label": "About",
+            "href": "https://pinedigital.co/"
+          },
+          {
+            "label": "Privacy",
+            "href": "https://pinedigital.co/privacy-policy"
+          },
+          {
+            "label": "Terms",
+            "href": "https://pinedigital.co/terms-of-service"
+          }
+        ]
+      },
+      {
+        "header": "WordPress Products",
+        "items": [
+          {
+            "label": "FluentCart Enhancer",
+            "href": "https://pinedigital.co/"
+          },
+          {
+            "label": "Kinsta Enhancer",
+            "href": "https://pinedigital.co/"
+          },
+          {
+            "label": "Perfmatters Enhancer",
+            "href": "https://pinedigital.co/"
+          },
+          {
+            "label": "RafflePress Enhancer",
+            "href": "https://pinedigital.co/"
+          }
+        ]
+      },
+      {
+        "header": "WordPress Services",
+        "items": [
+          {
+            "label": "WordPress Website Care",
+            "href": "https://pinedigital.co/"
+          },
+          {
+            "label": "WordPress Website Support",
+            "href": "https://pinedigital.co/"
+          },
+          {
+            "label": "WordPress Plugin Development",
+            "href": "https://pinedigital.co/"
+          },
+          {
+            "label": "WordPress Managed Hosting",
+            "href": "https://pinedigital.co/"
+          }
+        ]
+      }
+    ]
+  },
+  "description": "A trusted full-service agency specializing in WordPress products and services that help your business grow.",
+  "appearance": {
+    "strict": false
+  }
+}

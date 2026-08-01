@@ -1,0 +1,41 @@
+---
+title: "Get Started"
+description: "Enhancements for Kinsta WordPress Hosting administration."
+---
+
+## **Requirements**
+
+- WordPress 6.9\+
+- PHP 8.1\+
+- [**Kinsta Hosting**](https://kinsta.com/?kaid=ZEIXLLPBHABE)
+
+## **Installation**
+
+1. Download the latest **Kinsta Enhancer** version from [**your Pine Digital account**](https://pinedigital.co/account/downloads).
+2. In WordPress: **Plugins → Add New → Upload Plugin**, upload **Kinsta Enhancer**, and **activate it**.
+
+### **Kinsta Backup Manager**
+
+**Manage Kinsta site backups from the WordPress admin using the[Kinsta API](https://kinsta.com/docs/kinsta-api/).**
+
+- List backups for the configured environment
+- Create manual backups with an optional note
+- Restore a backup to a target environment
+- Delete backups and check async operation status
+
+#### **Setup Instructions**
+
+1. **Kinsta Account → Company Settings → API Keys →**Create API Key.
+2. **Kinsta Enhancer** **→ API Key →** Add your Kinsta API key from **Step 1**.
+3. Save changes.
+4. **Kinsta Enhancer** **→ WordPress Site →** Choose your site.
+5. **Kinsta Enhancer** **→ Environment →** Choose your environment.
+6. Save changes.
+
+## **Frequently Asked Questions**
+
+<AccordionGroup>
+  <Accordion title="How is the API key stored?">
+    The API key is encrypted with PHP OpenSSL using WordPress salts. You may optionally define **KINSTA\_API\_KEY** within **wp-config.php** so the key is not stored in the database.
+  </Accordion>
+</AccordionGroup>
