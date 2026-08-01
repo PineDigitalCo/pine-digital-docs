@@ -32,28 +32,24 @@
         "group": "Plugins",
         "icon": "plug",
         "pages": [
-          "untitled-page",
+          "fluentcart-enhancer",
+          "kinsta-enhancer",
+          "perfmatters-enhancer",
           {
-            "group": "Kinsta Enhancer",
-            "pages": [
-              "kinsta-enhancer/get-started"
-            ]
+            "group": "Kinsta Enhancer Group",
+            "pages": []
           },
           {
-            "group": "Perfmatters Enhancer",
-            "pages": [
-              "perfmatters-enhancer/get-started"
-            ]
+            "group": "Perfmatters Enhancer Group",
+            "pages": []
           },
           {
-            "group": "RafflePress Enhancer",
+            "group": "RafflePress Enhancer Group",
             "pages": [
-              "rafflepress-enhancer/get-started",
+              "rafflepress-enhancer",
               {
                 "group": "Modules",
-                "pages": [
-                  "rafflepress-enhancer/modules/fluentcrm"
-                ]
+                "pages": []
               }
             ]
           }

@@ -1,13 +1,31 @@
 ---
-title: "FluentCRM"
+title: "Get Started"
+description: "Enhancements for the RafflePress WordPress plugin."
 ---
 
-## **Auto-Add Verified Entrants**
+## Requirements
+
+- WordPress 6.9\+
+- PHP 8.1\+
+- [RafflePress](https://wordpress.org/plugins/rafflepress/)
+- [RafflePress Pro](https://tidd.ly/4pN4YAT) (Optional But Recommended)
+
+## Installation
+
+1. Install and activate **RafflePress** or **RafflePress Pro**.
+2. Download the latest **RafflePress Enhancer** version from [your Pine Digital account](https://pinedigital.co/account/downloads).
+3. In WordPress: **Plugins → Add New → Upload Plugin**, upload **RafflePress Enhancer**, and **activate it**.
+
+## Modules
+
+### FluentCRM
+
+#### **Auto-Add Verified Entrants**
 
 Automatically add RafflePress entrants who have had their email address verified to a particular FluentCRM **List** and optionally apply selected **Tags**.
 
 <AccordionGroup>
-  <Accordion title="What are the Requirements?" default-open="false">
+  <Accordion title="What are the Requirements?">
     - RafflePress active
     - FluentCRM active
     - Integrations module enabled
@@ -15,7 +33,7 @@ Automatically add RafflePress entrants who have had their email address verified
     - FluentCRM List selected
   </Accordion>
 
-  <Accordion title="How do we enable this?" default-open="false">
+  <Accordion title="How do we enable this?">
     1. Go to **Settings → PD Rafflepress**
     2. Enable **Integrations**
     3. Open **Settings** on the Integrations card
@@ -24,35 +42,35 @@ Automatically add RafflePress entrants who have had their email address verified
     6. Click **Save Changes**
   </Accordion>
 
-  <Accordion title="What if an entrant Is already an existing FluentCRM contact?" default-open="false">
+  <Accordion title="What if an entrant Is already an existing FluentCRM contact?">
     If the contact already exists, FluentCRM **updates** them rather than creating a duplicate, and attaches the list/tags you pass in.
 
     We then set a transient for one year. If that same contestant is verified/synced again, we skip calling FluentCRM.
   </Accordion>
 
-  <Accordion title="Are tags removed from existing FluentCRM contacts?" default-open="false">
+  <Accordion title="Are tags removed from existing FluentCRM contacts?">
     No, our plugin is additive only; it does not remove tags.
   </Accordion>
 </AccordionGroup>
 
-## Import From Giveaways
+#### Import From Giveaways
 
 One-click import of RafflePress giveaway contestants into any FluentCRM list. Choose statuses, tags, and how to treat existing contacts.
 
 <AccordionGroup>
-  <Accordion title="What are the Requirements?" default-open="false">
+  <Accordion title="What are the Requirements?">
     - Integrations module enabled
     - FluentCRM active
     - At least one non-archived giveaway with contestants
   </Accordion>
 
-  <Accordion title="How do we enable this?" default-open="false">
+  <Accordion title="How do we enable this?">
     1. Go to **Settings → PD RafflePress**
     2. Open **Integrations**
     3. Scroll to **FluentCRM → Import From Giveaways** (no separate toggle; tool is always available when FluentCRM is active)
   </Accordion>
 
-  <Accordion title="How does this work?" default-open="false">
+  <Accordion title="How does this work?">
     - Pick one or more giveaways (or all), contestant statuses, lists, optional tags, contact status (Subscribed / Pending), and Existing Contacts (Update / Skip)
     - Runs in batches via AJAX; shows imported / skipped / failed counts when done
     - Soft-deleted contestants are excluded; does not change live FluentCRM Sync settings or markers
