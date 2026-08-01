@@ -35,6 +35,7 @@
           "fluentcart-enhancer",
           "kinsta-enhancer",
           "perfmatters-enhancer",
+          "rafflepress-enhancer",
           {
             "group": "Kinsta Enhancer Group",
             "pages": []
@@ -46,7 +47,6 @@
           {
             "group": "RafflePress Enhancer Group",
             "pages": [
-              "rafflepress-enhancer",
               {
                 "group": "Modules",
                 "pages": []
