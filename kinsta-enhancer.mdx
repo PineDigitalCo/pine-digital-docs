@@ -16,12 +16,21 @@ description: "Enhancements for Kinsta WordPress Hosting administration."
 
 ### **Kinsta Backup Manager**
 
-**Manage Kinsta site backups from the WordPress admin using the[Kinsta API](https://kinsta.com/docs/kinsta-api/).**
+**Manage Kinsta site backups from the WordPress admin using the [Kinsta API](https://kinsta.com/docs/kinsta-api/).**
 
 - List backups for the configured environment
 - Create manual backups with an optional note
 - Restore a backup to a target environment
 - Delete backups and check async operation status
+
+<Danger>
+  Kinsta Enhancer uses a **company-level Kinsta API key** and therefore **every site and environment under that Kinsta account** is available in the settings UI.
+
+  This plugin should only be used under the following scenarios:
+
+  - Installed on the Kinsta account holder's website only.
+  - Installed on client websites but hidden from everyone except the Kinsta account holder. 
+</Danger>
 
 #### **Setup Instructions**
 
