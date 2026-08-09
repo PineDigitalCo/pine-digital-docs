@@ -1,3 +1,63 @@
 ---
 title: "PreLaunch Kit"
+description: "A simple yet powerful coming soon and maintenance mode plugin."
 ---
+
+PreLaunch Kit puts your site behind a normal WordPress landing page until you go live. You choose coming soon or maintenance mode, decide who can still browse, and collect emails with FluentCRM or Mailchimp blocks built in.
+
+## Requirements
+
+- WordPress 6.9\+
+- PHP 8.1\+
+- A published page selected as the landing page
+- [FluentCRM](https://influencewp.com/deal/marketing/fluentcrm/) (Optional - For Lead Capture)
+- [Mailchimp](https://mailchimp.com/) (Optional - For Lead Capture)
+
+## Installation
+
+1. Download the latest **PreLaunch Kit** version from [your Pine Digital account](https://pinedigital.co/account/downloads).
+2. In WordPress: **Plugins → Add New → Upload Plugin**, upload the PreLaunch **Kit,** and **activate it**.
+3. **Optionally** install and activate **FluentCRM** or **Mailchimp**.
+
+## Features
+
+### **Coming Soon / Maintenance Mode**
+
+- **Coming Soon** — Show visitors a “launching soon” page (and optionally collect emails) while telling search engines the site is still open for business.
+- **Maintenance Mode** — Show visitors an “under maintenance” page (and optionally collect emails) while telling search engines the site is temporarily closed.
+- Show visitors a custom landing page instead of the rest of your site
+- Let certain user roles (like Administrator) keep full access
+- Allow specific IP addresses (handy for your team or office)
+- Share a private bypass URL so anyone who visits it can browse the real site for a while (like a shared preview link, not a login)
+
+### **Capture Emails Before Launch**
+
+You can use any solution of your choosing for building your landing page and for capturing emails. For those who use WordPress blocks (Gutenberg), PreLaunch Kit includes a newsletter block that's ready for you to drop in your desired settings.
+
+- Add newsletter signup blocks with FluentCRM and Mailchimp integration
+- Customize button text, layout, and success messages
+- Built-in honeypot SPAM protection
+
+## Frequently Asked Questions
+
+<AccordionGroup>
+  <Accordion title="How do we set up Coming Soon or Maintenance Mode?">
+    1. Go to **Pine Digital → PreLaunch Kit**
+    2. **Enable** PreLaunch Kit and choose a **Landing Page**
+    3. Choose **Coming Soon** or **Maintenance Mode**
+    4. Optionally set **Exclude User Roles**, **Exclude IP Addresses**, and **Bypass URL**
+    5. Click **Save Settings**, then clear all levels of caching
+  </Accordion>
+
+  <Accordion title="How do we capture emails using the block editor (Gutenberg)?">
+    1. Using the WordPress block editor, edit your coming soon / maintenance mode landing page.
+    2. Insert the **Newsletter** block from **Pine Digital PreLaunch Kit** (or search “newsletter”).
+    3. Select the inner **Newsletter Form** block (not just the outer Newsletter wrapper).
+    4. In the sidebar, choose the platform:
+       - **Mailchimp** — Enter your API key and list/audience ID. The key is stored in WordPress options keyed by list ID and is not left in front-end HTML after save/render.
+       - **FluentCRM** — Choose a **FluentCRM Tag** and **FluentCRM List** (or leave empty). If FluentCRM isn’t active, you can type a tag/list slug manually.
+    5. Optional: open **Protection** → keep **Enable Honeypot** on (default) to silently accept bot fills.
+    6. Adjust layout (row vs. column, stack on mobile), success/already-subscribed messages, and colors as needed.
+    7. Publish the page and then select it as the **Landing Page** within PreLaunch Kit.
+  </Accordion>
+</AccordionGroup>
