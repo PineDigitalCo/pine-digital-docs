@@ -43,10 +43,10 @@
         "group": "Changelogs",
         "icon": "history",
         "pages": [
-          "rafflepress-enhancer-changelog",
-          "kinsta-enhancer-changelog",
           "fluentcart-enhancer-changelog",
+          "kinsta-enhancer-changelog",
           "perfmatters-enhancer-changelog",
+          "rafflepress-enhancer-changelog",
           "prelaunch-kit-changelog"
         ]
       }
