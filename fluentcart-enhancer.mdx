@@ -44,3 +44,48 @@ FluentCart’s short description field is plain text only. **FluentCart Enhancer
 FluentCart allows you to add links to a product's **long description**, but you must manually enter the URLs, which is prone to errors and causes context switching. **FluentCart Enhancer gives you a page selector to save you time and help prevent errors.**
 
 This also works with short descriptions, thanks to FluentCart Enhancer's **HTML Short Description** feature.
+
+### **Manual License Keys**
+
+FluentCart Pro lets you distribute license keys for your products, but you need to create orders to obtain them. **FluentCart Enhancer lets you create license keys without needing to place an order.**
+
+<AccordionGroup>
+  <Accordion title="What are the benefits?">
+    - Hand out support, wholesale, or partner keys without placing a fake order.
+    - One key can cover a product, a set of products, or all licensed products (including ones you add later).
+    - Keys land in FluentCart’s native list and portal and activate/check API.
+  </Accordion>
+
+  <Accordion title="What are the requirements?">
+    - FluentCart active
+    - FluentCart Pro with Product Licensing enabled
+    - Manual License Keys enabled (FluentCart Enhancer)
+    - Capability: `licenses/manage` or `manage_options`<br />
+  </Accordion>
+
+  <Accordion title="How do we get started?">
+    1. Go to **Pine Digital → FluentCart Enhancer**
+    2. Under **Licenses**, turn on **Manual License Keys**
+    3. Open **FluentCart → Licenses**
+    4. Click **Create License**
+  </Accordion>
+
+  <Accordion title="What are the options?">
+    | **Name** | **Default** | **Notes** |
+    | :-- | :-- | :-- |
+    | Manual License Keys | Off | Overview toggle; Create License does not appear until this is on |
+    | Applies To | One Product | One Product, Products, or All Products (Master Key) |
+    | Activations | 1 | Number, or Unlimited |
+    | Expiration | Lifetime | Lifetime or a specific date |
+    | Email The Customer | Off | Shown only when a customer is selected |
+  </Accordion>
+
+  <Accordion title="What are the nerdy details?">
+    - Customer is optional; Email The Customer only appears when a customer is selected (off by default)
+    - Keys are always auto-generated (`wp_generate_uuid4()`); you cannot paste a custom string
+    - Only products with licensing enabled are selectable; pick variations when a product has more than one
+    - One product/products is a snapshot of the chosen products/variations with one shared activation pool
+    - All Products (Master Key) allows any licensed product, including ones added later
+    - Status, expiration, and activation limit still apply on activate/check
+  </Accordion>
+</AccordionGroup>
