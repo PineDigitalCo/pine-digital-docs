@@ -82,3 +82,32 @@ One-click import of RafflePress giveaway contestants into any FluentCRM list. Ch
     - Soft-deleted contestants are excluded; does not change live FluentCRM Sync settings or markers
   </Accordion>
 </AccordionGroup>
+
+#### Tag FluentCRM Contacts By Giveaway
+
+Auto-sync verified RafflePress entrants with a per-giveaway FluentCRM tag.
+
+<AccordionGroup>
+  <Accordion title="What are the requirements?">
+    - RafflePress and FluentCRM active
+    - FluentCRM module enabled
+    - Auto-Add Verified Entrants on, with a FluentCRM List saved
+    - At least one giveaway and one FluentCRM tag
+  </Accordion>
+
+  <Accordion title="How do we enable this?">
+    1. **Pine Digital →** **RafflePress Enhancer → **Enable FluentCRM and open Settings
+    2. Turn on Auto-Add Verified Entrants
+    3. Set FluentCRM List (required) and FluentCRM Tags (optional, all giveaways)
+    4. Under Giveaway Tags, click Add Giveaway Tag, pick a giveaway and one tag
+    5. Save Changes
+  </Accordion>
+
+  <Accordion title="How does this work?">
+    - Runs only after Email Verified (confirmation link or admin verify)
+    - Unmapped giveaways get global tags only
+    - Existing FluentCRM tags are never removed
+    - Import From Giveaways does not use this map
+    - Changing a mapping later does not update already-synced contestants
+  </Accordion>
+</AccordionGroup>
