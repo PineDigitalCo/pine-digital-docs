@@ -36,7 +36,8 @@
           "kinsta-enhancer",
           "perfmatters-enhancer",
           "rafflepress-enhancer",
-          "prelaunch-kit"
+          "woo-commerce-enhancer",
+          "wordpress-enhancer"
         ]
       },
       {
@@ -47,7 +48,8 @@
           "kinsta-enhancer-changelog",
           "perfmatters-enhancer-changelog",
           "rafflepress-enhancer-changelog",
-          "prelaunch-kit-changelog"
+          "woocommerce-enhancer-changelog",
+          "wordpress-enhancer-changelog"
         ]
       }
     ]
