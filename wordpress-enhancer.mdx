@@ -3,20 +3,273 @@ title: "WordPress Enhancer"
 description: "A WordPress plugin providing enhancements to the overall WordPress admin experience."
 ---
 
-## Requirements
+## Command Palette Links
 
-- [WordPress](https://wordpress.org/)
+By default, the [WordPress Command Palette](https://wordpress.com/support/site-editor/command-palette/) presents results that can only be opened in the same browser window. Our plugin turns those results into more powerful links with right-click capabilities.
 
-## Installation
+## Duplicate Posts
 
-1. Install **WordPress**.
-2. Download the latest **WordPress Enhancer** version from [your Pine Digital account](https://pinedigital.co/account/downloads).
-3. In WordPress: **Plugins → Add New → Upload Plugin**, upload **WordPress Enhancer**, and **activate it**.​
+WordPress doesn’t provide a way to duplicate post types, so you either need a code snippet or a plugin. **WordPress Enhancer allows you to duplicate any post type (Posts, Pages, Products, etc.).**
 
-## General Enhancements
+## Link Management
 
-- **Duplicate Posts:** WordPress doesn’t provide a way to duplicate post types, so you either need a code snippet or a plugin. **WordPress Enhancer allows you to duplicate any post type (Posts, Pages, Products, etc.).**
-- **Command Palette Links:** By default, the [WordPress Command Palette](https://wordpress.com/support/site-editor/command-palette/) presents results that can only be opened in the same browser window. Our plugin turns those results into more powerful links with right-click capabilities.
+Control site-wide link behavior and create smart links.
+
+### Link Rules
+
+Decide how links behave across your entire website. WordPress don’t provide a centralized location to manage outbound links, open links in new tabs, choose whether links are followed or not followed, etc.
+
+**Link Management gives you this flexibility, so you have more control over your website's user experience, SEO, and more, as well as an additional way to monetize.**
+
+### **Globally Nofollow External Links**
+
+When this option is on, links that leave your site are marked so search engines do not treat them as endorsements. Links on your exception list are not changed.
+
+### **Globally Open External Links in a New Tab**
+
+Choose to open all external links in a new browser tab.
+
+### **Set Exclusions for External Links (Nofollow and New Tab)**
+
+Add links or domains that should never be modified, such as affiliate links, sponsor links, or URLs you want to keep exactly as written.
+
+**You can add:**
+
+- A full link, such as `https://example.com/page`
+- A domain, such as `example.com` (includes subdomains)
+- Part of a link, such as `/affiliate/`
+
+Links on this list are skipped entirely. Any automatic changes already applied to them are removed. You can manage the list in settings, import it from a file, or use both together.
+
+### **Set Exclusions for Internal Link Nofollows**
+
+Add links or domains that should never be modified, such as affiliate links, sponsor links, or URLs you want to keep exactly as written.
+
+### **Single Listing Support**
+
+Link Management applies your rules to single listings as well, so links behave just as they do for the rest of your website.
+
+### Import an Exception List from a File
+
+Instead of maintaining a long list in settings, you can store excluded URLs in a simple file.
+
+**Example format:**
+
+```json
+{
+  "urls": [
+    "https://example.com",
+    "https://another-site.com/page"
+  ]
+}
+```
+
+In the **Advanced area of Link Management**, you can browse for a file, create one in your theme, or enter a file path manually. For security, use a file on your site rather than a link from somewhere you do not trust.
+
+### **Developer Filters**
+
+For custom setups, enable this feature to allow developers to extend exception lists or file paths in their code.
+
+### Database Update Tool
+
+This tool permanently changes content in the database. You enter a specific URL, and it finds content that contains that URL and adds a nofollow directly to the HTML.
+
+<Note>
+  This is a one-off cleanup or migration tool, not part of everyday use.
+</Note>
+
+**Frequently Asked Questions (Link Rules)**
+
+<AccordionGroup>
+  <Accordion title="How do we set this up?">
+    Once the module is enabled, it’s super easy to configure the available options.
+
+    1. Under **Link Rules**, turn on the options you want:
+       - **Nofollow External Links**
+       - **Open External Links In New Tab**
+       - **Open Internal Links In New Tab**
+    2. Add excluded links and domains under **Exceptions**.
+    3. If needed, add domains under **Internal New Tab Exceptions**.
+    4. Open **Advanced** only if you need file import, bulk updates, or developer options.
+
+    _Everything starts **off** by default. Enable only what your site needs._
+  </Accordion>
+
+  <Accordion title="What does “Nofollow External Links” do?">
+    When this is on, links that go to other websites are marked so search engines do not treat them as endorsements of those sites. Links on your exception list are not changed.
+  </Accordion>
+
+  <Accordion title="What should I put on the Exceptions list?">
+    Any link or domain you want Link Management to leave completely alone. That might include affiliate links, sponsor links, links to your other sites, or any URL you do not want changed.
+  </Accordion>
+
+  <Accordion title="Will this change links while I am editing in WordPress?">
+    No, Link Management only affects what visitors see on the public site. It does not change how links appear in the WordPress dashboard or editor.
+  </Accordion>
+
+  <Accordion title="Do I need to go back and edit old posts?">
+    No, but in the very rare event that you do, use the Database Update Tool.
+  </Accordion>
+
+  <Accordion title="What is the Database Update Tool for?">
+    It is for updating links in content that was published before you enabled Link Management. Enter a specific URL, and the tool finds matching links in your posts and updates them in batches. On larger sites, you may need to run it more than once.
+  </Accordion>
+
+  <Accordion title="Can I import my exception list from a file?">
+    Yes, under the **Advanced** area, you can point to a file on your site or create one in your theme. This is useful if you have a long list of URLs to exclude. Use a file on your own site rather than a file hosted somewhere else.
+  </Accordion>
+
+  <Accordion title="How can I tell if it is working?">
+    Enable the module, turn on the options you want, and visit a post, page, listing, etc., that contains links. Click a link to confirm whether it opens in a new tab. If you use the **Nofollow** option, inspect a few external links on the live page to confirm they are marked the way you expect.
+  </Accordion>
+</AccordionGroup>
+
+## Link Generator
+
+Stop hand-building links in a text editor. The Link Generator lives inside Link Management and updates as you type. Select a destination, set your options, and then copy the URL or full HTML when you are finished.
+
+Use the **Hyperlink** tab for everyday links to pages, products, and custom addresses.
+
+Use the **Coupon** tab to build WooCommerce discount links that send shoppers to the right place with the code already in the URL.
+
+**Highlights**
+
+- **Live preview** so you see the link before you paste it anywhere
+- **Two tabs**: standard hyperlinks and WooCommerce coupon links
+- **Smart destinations**: pick Home, Shop, Cart, Checkout, any page, or any product from dropdowns
+- **Coupon links made easy**: choose a coupon and destination; the correct URL is built for you
+- **Add to Cart links**: send shoppers straight to the cart with a product and coupon in one click
+- **Copy ready HTML** with the right `target`, `rel`, and link options already set
+- **Optional tracking fields** for CSS classes and data attributes on your HTML links
+- **Works with our WooCommerce Enhancer plugin's Smart Coupon Links** so discount links actually apply on your live store
+
+**Base URL**
+
+Where the link should go.
+
+| **Option** | **What it does** |
+| :-- | :-- |
+| **Custom** | Paste any full URL (your site or another site). |
+| **Home** | Your site homepage. |
+| **Shop** | Your WooCommerce shop page (if WooCommerce is active). |
+| **Cart** | Your cart page. |
+| **Checkout** | Your checkout page. |
+| **Pages** | Any published page on your site (shown in a nested list). |
+| **Products** | Any published product (links to the product page). |
+
+**Link Text  (Optional)**
+
+The words people see and click on. This appears in the Preview and in the HTML Code output. If you leave it empty, the preview and HTML will use the URL itself as the visible text.
+
+**Target**
+
+Where the link opens when clicked.
+
+| **Option** | **Plain English** |
+| :-- | :-- |
+| **Same Window** | Opens in the current tab (most common). |
+| **New Window** | Opens in a new browser tab. |
+| **Parent Frame** | For sites using frames (rare). |
+| **Top Frame** | This is for sites that use frames (rare). |
+
+**Link Options (Optional)**
+
+Optional checkboxes that change how the link behaves:
+
+| **Option** | **What it does** |
+| :-- | :-- |
+| **Download Link** | Tells the browser to download the file instead of opening it (best for file links). |
+| **Do Not Endorse (nofollow)** | Adds `nofollow` so search engines do not pass ranking credit through this link. |
+| **Do Not Send Referrer (noreferrer)** | Hides which page the visitor came from. |
+| **External Link** | Opens in a new tab and adds security-related attributes for links to other websites. |
+| **Help Link** | Marks the link as a help link for browsers and assistive technologies. |
+
+**Tracking (Optional)**
+
+| **Field** | **What it does** |
+| :-- | :-- |
+| **HTML Class** | Add one or more CSS class names (separated by spaces). Useful for styling or analytics scripts. Example: `promo-link spring-sale` |
+| **Data Attributes** | Add extra `data-*` attributes to the HTML link. Example: `data-campaign="spring-email"` |
+
+**HTML Code**
+
+A complete `<a>...</a>` tag. Click inside the field to select all, or use **Copy**. Paste into:
+
+- Email templates
+- WordPress custom HTML blocks
+- Page builders that accept HTML
+- Theme template files
+
+**URL**
+
+The web address only, without HTML. Use for:
+
+- Social media posts
+- SMS messages
+- QR codes
+- Any place that only accepts a plain link
+
+### Hyperlinks
+
+These are normal links that do not apply a WooCommerce coupon. Use these links for navigation links, content links, downloads, and external sites.
+
+### Coupons
+
+These links are for URLs that include a WooCommerce discount code. Use these links for promotions, email campaigns, and special offers.
+
+Coupon links apply discounts on your site when [**WooCommerce**](/woo-commerce)\*\* → Smart Coupon Links\*\* is enabled in the **WooCommerce** module. If it is off, the generator still builds the link, but visitors will not receive an automatic discount until you turn that setting on.
+
+**Frequently Asked Questions (Link Generator)**
+
+<AccordionGroup>
+  <Accordion title="How do we build a normal link?">
+    Once the module is enabled, it’s super easy to configure the available options.
+
+    1. Open **Link Management** and find **Link Generator**.
+    2. Stay on the **Hyperlink** tab.
+    3. Choose a **Base URL** (for example a page or product).
+    4. Enter **Link Text** (for example "View our plans").
+    5. Copy **URL** or **HTML Code**.
+    6. Paste where you need it.
+  </Accordion>
+
+  <Accordion title="How do we build a coupon link?">
+    1. Enable **Smart Coupon Links** under **MyListing Pro → WooCommerce** module settings (one-time setup).
+    2. Open **Link Management → Link Generator → Coupon** tab.
+    3. Choose a **Base URL** (Shop is a good default).
+    4. Select a **Coupon**.
+    5. Optionally change **Link Text** or open **Tracking** for campaign tags.
+    6. Copy **URL** or **HTML Code** and share it.
+    7. Test in a private browser window: click the link and confirm the discount appears in the cart.
+  </Accordion>
+
+  <Accordion title="Do you have any best practices?">
+    - \*\*Use Shop for broad promotions: \*\*A shop link works well when you want people to browse and apply a site-wide or general coupon.
+    - \*\*Use Add to Cart for a specific product offer: \*\*When the promotion is for one item, pick the product under **Add to Cart** so the item and coupon are both handled in one click.
+    - \*\*Use HTML Code for emails: \*\*Email tools often need a full link tag. The generator sets `href`, `target`, and `rel` for you.
+    - \*\*Use URL for social and SMS: \*\*Platforms usually want a plain address, not HTML.
+    - \*\*Use Tracking for campaigns: \*\*Add a class like `email-cta` or a data attribute like `data-campaign="june-sale"` so your scripts or analytics can tell which link was clicked.
+    - \*\*Test coupon links in a private window: \*\*An existing cart session can make testing confusing. A fresh private window provides a cleaner result.
+  </Accordion>
+
+  <Accordion title="Do you have any troubleshooting tips?">
+    - \*\*The generator shows "Enter a URL" or an empty output: \*\*Choose a Base URL or enter a custom URL. On the Coupon tab, you must also select a coupon.
+    - \*\*Coupon list says "No coupons found": \*\*Create and publish a coupon in **WooCommerce → Marketing → Coupons** (or **Products → Coupons**, depending on your WooCommerce version).
+    - \*\*The coupon link does not apply a discount on the site: \*\*Confirm **Smart Coupon Links** is enabled in the WooCommerce module. Confirm the coupon is valid (not expired, within usage limits, and allowed for the cart).
+    - **The Add to Cart list is missing a product: only** simple, purchasable, in-stock products appear. Variable or out-of-stock products are not listed.
+    - \*\*Pages or products are slow to appear in the dropdown: \*\*The list loads from your site after the page opens. Wait a moment for loading **pages and products…** or loading **products…** to finish.
+    - \*\*Tracking fields do not show in the URL field: \*\*That is expected. Classes and data attributes are only added to HTML Code and Preview, not the plain URL.
+    - \*\*I edited Data Attributes on the Coupon tab, and values stopped updating: \*\*Once you type in that box, auto-fill turns off so your edits are kept. Clear the box if you want automatic values again (you may need to refresh the page).
+  </Accordion>
+
+  <Accordion title="What does Link Generator not do for us?">
+    - It does not create WooCommerce coupons (use WooCommerce for that).
+    - It does not turn on Smart Coupon Links for you (use WooCommerce module settings).
+    - It does not change site-wide link rules (those are in **Link Rules** above the generator).
+    - It does not save a library of links; copy each link when you build it.
+    - It does not guarantee a coupon will work if WooCommerce rules reject it (product restrictions, minimum spend, user limits, and so on).
+  </Accordion>
+</AccordionGroup>
 
 ## PreLaunch Kit
 
