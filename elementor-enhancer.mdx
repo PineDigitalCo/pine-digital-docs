@@ -34,3 +34,97 @@ Adds a Newsletter Opt-In checkbox to Elementor Pro forms. If the visitor check
     5. Test form submissions with the **Newsletter Opt-In **box checked.
   </Accordion>
 </AccordionGroup>
+
+### **Sortable Template Columns**
+
+Key columns in the **Templates** table are now sortable, so you can locate and manage your templates more quickly.
+
+2nd-level sorting allows you to do more fine-grained sorting of your templates. For example, you can first sort by template **Type** and then by **Instance**.
+
+When enabled, these key Elementor **Template** columns become sortable:
+
+<table>
+  <colgroup>
+    <col width="100" />
+    <col width="518" />
+  </colgroup>
+  <thead>
+    <tr>
+      <th>**Column**</th>
+      <th>**Sort behavior**</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>**Type**</td>
+      <td>Alphabetical by template type (page, section, header, etc.)</td>
+    </tr>
+    <tr>
+      <td>**Author**</td>
+      <td>By template author</td>
+    </tr>
+    <tr>
+      <td>**Instances**</td>
+      <td>By number of active display conditions (Elementor Pro)</td>
+    </tr>
+  </tbody>
+</table>
+
+### Coming Soon Bypass
+
+Elementor only allows users to bypass Coming Soon or Maintenance mode if they hold a particular role, which means they need to be logged in. **Elementor Enhancer gives you total flexibility and convenience when it comes to providing access to users, even if they're logged out.**
+
+### **Preview Link**
+
+**Elementor Enhancer** provides a default preview link for browsing the site while it is locked to the public, and as the site owner, you can customize the link to make it even more secret.
+
+### **IP Exclusion List**
+
+Site owners can specify user IP addresses so that those users can completely bypass Coming Soon/Maintenance mode without needing to enter a preview link into their browser.
+
+<AccordionGroup>
+  <Accordion title="How do we get started?">
+    1. Enable **Coming Soon** or **Maintenance Mode** in **Elementor → Settings** (General or Tools).
+    2. **Pine Digital → Elementor Enhancer →** Turn on **Coming Soon Bypass** under **Elementor Coming Soon Bypass**.
+    3. _(Optional)_ Add your IP(s) under **Exclude IP Addresses** (one per line), using **Detected IP(s) for this request** if helpful, then click **Save Changes**.
+    4. _(Optional)_ If the site is behind a reverse proxy (Cloudflare, Kinsta, etc.), enable **Trust Proxy Headers** and click **Save Changes**.
+    5. _(Optional)_ Set a **Secret Code (Optional)** and click **Save Changes** so only the full preview link works; remove it later with **Stop Requiring a Secret Code on Preview Links** and **Save Changes**.
+    6. Copy **Preview Link** and open it in the browser where you want to browse the live site (incognito works well for testing).
+    7. When you’re done previewing, open **Stop Preview Link** (under **Technical Details**) in the same browser to end the session.
+    8. After you first enable the toggle, reload the WordPress dashboard or visit the front end once so bypass hooks register on the next request.
+    9. Verify: visitors without bypass still see Coming Soon; after the preview link (and secret, if set), you see the normal site. Purge or adjust cache if the locked page still shows for everyone.
+  </Accordion>
+
+  <Accordion title="What if the Coming Soon/Maintenance Mode page still appears?">
+    Your host or caching plugin may be serving a saved copy of the page. **Clear all levels of caching (CDN, server, plugin, etc.) and then open the preview link again.**
+  </Accordion>
+
+  <Accordion title="When might we need to enable Trust Proxy Headers?">
+    This setting says to also consider X-Forwarded-For, X-Real-IP, and CF-Connecting-IP when matching the IP allowlist.
+
+    **Leave off unless a trusted reverse proxy or CDN (e.g., Cloudflare, Nginx in front of WordPress) sets these headers; otherwise, an attacker can spoof the headers and bypass the IP allowlist.**
+  </Accordion>
+</AccordionGroup>
+
+### Dynamic Rotating Carousel
+
+Carousels are a great way to display different content in a small space, but Elementor always shows slide one by default. **Elementor Enhancer displays a different slide on every page load, so visitors don't always see the same content.**
+
+<AccordionGroup>
+  <Accordion title="What are the requirements?">
+    - **Elementor Enhancer** with **Dynamic Rotating Carousel** enabled
+    - **Elementor Pro** Carousel Widget
+  </Accordion>
+
+  <Accordion title="How do we get started?">
+    1. **Pine Digital → Elementor Enhancer → Dynamic Rotating Carousel →** Enable
+    2. Edit a page with Elementor, then add and select the **Carousel** widget
+    3. Open **Advanced**, then **CSS Classes**, and add **pd-dynamic-carousel**
+    4. Publish
+    5. View the live page, refresh it, and verify the starting slide changes on each refresh
+  </Accordion>
+
+  <Accordion title="Do all visitors see the same starting slide?">
+    No. Each visitor gets their own rotation. When someone reloads the page, they move to the next slide in the carousel. Another visitor on the same page can be on a different slide at the same time. Clearing browsing data or using a different device starts that person’s sequence over from the beginning.
+  </Accordion>
+</AccordionGroup>
