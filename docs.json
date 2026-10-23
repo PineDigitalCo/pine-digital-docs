@@ -32,6 +32,7 @@
         "group": "Plugins",
         "icon": "plug",
         "pages": [
+          "elementor-enhancer",
           "fluentcart-enhancer",
           "kinsta-enhancer",
           "perfmatters-enhancer",
@@ -44,6 +45,7 @@
         "group": "Changelogs",
         "icon": "history",
         "pages": [
+          "elementor-enhancer-changelog",
           "fluentcart-enhancer-changelog",
           "kinsta-enhancer-changelog",
           "perfmatters-enhancer-changelog",
