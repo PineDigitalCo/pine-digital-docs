@@ -12,6 +12,10 @@ description: "Manage backups and plugins for all websites under a Kinsta hosting
   - Installed on client websites but hidden from everyone except the Kinsta account holder. 
 </Danger>
 
+<Info>
+  You only need to enter the Kinsta API key once within the Kinsta Enhancer settings.
+</Info>
+
 ## **Requirements**
 
 - [**Kinsta Hosting**](https://kinsta.com/?kaid=ZEIXLLPBHABE)
@@ -32,35 +36,32 @@ description: "Manage backups and plugins for all websites under a Kinsta hosting
 
 <AccordionGroup>
   <Accordion title="How do we get started?">
-    1. **Kinsta Account → Company Settings → API Keys →** Create API Key.
-    2. **Kinsta Enhancer** **→ API Key →** Add your Kinsta API key from **Step 1**.
-    3. Save changes.
-    4. **Kinsta Enhancer** **→ WordPress Site →** Choose your site.
-    5. **Kinsta Enhancer** **→ Environment →** Choose your environment.
-    6. Save changes.
+    1. **Kinsta Account → Company Settings → API Keys →** Create API Key
+    2. **Kinsta Enhancer** **→ API Key →** Add your Kinsta API key from **Step 1**
+    3. Save changes
+    4. **Kinsta Enhancer** **→** Backup Management 
+    5. **WordPress Site →** Choose your site
+    6. **Environment →** Choose your environment
   </Accordion>
 
   <Accordion title="How do we perform a backup?">
-    1. In the WordPress dashboard, go to **Pine Digital → Kinsta Enhancer**.
-    2. Under **API Settings**, confirm your API key, **WordPress Site**, and **Environment** are set, then click **Save Changes** if you changed anything.
-    3. Scroll to **Backups → Create Manual Backup**.
-    4. (Optional) Enter a note in **Add Optional Backup Note**.
-    5. Click **Create Manual Backup**.
-    6. When the request is accepted, you’ll see a confirmation. Backups run asynchronously on Kinsta — use **Check Status** with the operation ID if you want to confirm it’s finished.
-    7. Refresh the backups list to see the new backup once it appears.
+    1. **Kinsta Enhancer → Backup Management →** Create Manual Backup
+    2. Optionally add a note to easily identify your backup
+    3. Click **Create Manual Backup**
+    4. You’ll receive a confirmation when the request is accepted, and backups run asynchronously on Kinsta, so use **Check Status** with the operation ID to verify completion
+    5. Refresh the backups list to see the new backup once it appears
 
     You need a `manage_options` user, a valid MyKinsta API key and a selected environment. Backups apply to the environment chosen in API settings.
   </Accordion>
 
   <Accordion title="How do we restore from backup?">
-    1. In the WordPress dashboard, go to **Pine Digital → Kinsta Enhancer**.
-    2. Confirm **API Settings** has a valid API key, site, and environment selected.
-    3. Under **Backups**, locate the backup in the list.
-    4. Open **Restore** for that row.
-    5. Choose the **Target Environment**.
-    6. If the target is **Live**, type `RESTORE` in the confirmation field (admins with the live-restore capability only).
-    7. Click **Restore Backup**.
-    8. When the request succeeds, you’ll see a confirmation. Restores run asynchronously — use **Check Status** with the operation ID to confirm it’s finished.
+    1. **Kinsta Enhancer →** Backup Management 
+    2. Under **Backups**, locate the backup in the list
+    3. Open **Restore** for that row
+    4. Choose the **Target Environment**
+    5. If the target is **Live**, type `RESTORE` in the confirmation field (admins with the live-restore capability only)
+    6. Click **Restore Backup**
+    7. When the request succeeds, you’ll see a confirmation, and you can use **Check Status** with the operation ID to verify when the asynchronous restore is complete.
 
     Your WordPress user email should match a MyKinsta company user (or the company should have only one user), so restore notifications can be assigned. Live restores require the `pde_kinsta_restore_live` capability (granted to administrators on activation).
   </Accordion>
@@ -72,9 +73,23 @@ description: "Manage backups and plugins for all websites under a Kinsta hosting
 
 ### **Plugin Manager**
 
-Manage plugins site backups from the WordPress admin using the [Kinsta API](https://kinsta.com/docs/kinsta-api/).
+Kinsta Enhancer pulls the same plugin list you see in **MyKinsta → Sites →** **Plugins**, without leaving WordPress. Search, filter, download ZIP backups, and trigger environment updates from one screen.
+
+- **Search and Filter:** the same plugin inventory you see in MyKinsta, right in WordPress.
+- **Version and Update Visibility:** across every Kinsta site and environment.
+- **One-Click ZIP Backups:** from this site or WordPress.org.
+- **Premium Plugin Exports:** from the Kinsta environment where the plugin is installed.
+- **Per-Site Updates:** from one unified plugin list.
+- **Site-By-Site Breakdown:** for agencies and multi-site Kinsta setups.
+- **In-Page Download Progress:** without leaving your settings.
+- **Optional Plugin Descriptions:** for quick scans or deeper review.
+- **Scalable Paging:** for long plugin lists.
 
 <AccordionGroup>
-  <Accordion>
+  <Accordion title="How do we get started?">
+    1. **Kinsta Account → Company Settings → API Keys →** Create API Key
+    2. **Kinsta Enhancer** **→ API Key →** Add your Kinsta API key from **Step 1**
+    3. Save changes
+    4. **Kinsta Enhancer** **→** Plugin Management
   </Accordion>
 </AccordionGroup>
