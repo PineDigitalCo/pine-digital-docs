@@ -74,39 +74,7 @@ description: "Manage backups and plugins for all websites under a Kinsta hosting
 
 Manage plugins site backups from the WordPress admin using the [Kinsta API](https://kinsta.com/docs/kinsta-api/).
 
-<Accordion title="How do we get started?">
-  1. **Kinsta Account → Company Settings → API Keys →** Create API Key.
-  2. **Kinsta Enhancer** **→ API Key →** Add your Kinsta API key from **Step 1**.
-  3. Save changes.
-  4. **Kinsta Enhancer** **→ WordPress Site →** Choose your site.
-  5. **Kinsta Enhancer** **→ Environment →** Choose your environment.
-  6. Save changes.
-</Accordion>
-
-<Accordion title="How do we perform a backup?">
-  1. In the WordPress dashboard, go to **Pine Digital → Kinsta Enhancer**.
-  2. Under **API Settings**, confirm your API key, **WordPress Site**, and **Environment** are set, then click **Save Changes** if you changed anything.
-  3. Scroll to **Backups → Create Manual Backup**.
-  4. (Optional) Enter a note in **Add Optional Backup Note**.
-  5. Click **Create Manual Backup**.
-  6. When the request is accepted, you’ll see a confirmation. Backups run asynchronously on Kinsta — use **Check Status** with the operation ID if you want to confirm it’s finished.
-  7. Refresh the backups list to see the new backup once it appears.
-
-  You need a `manage_options` user, a valid MyKinsta API key and a selected environment. Backups apply to the environment chosen in API settings.
-</Accordion>
-
-<Accordion title="How do we restore from backup?">
-  1. In the WordPress dashboard, go to **Pine Digital → Kinsta Enhancer**.
-  2. Confirm **API Settings** has a valid API key, site, and environment selected.
-  3. Under **Backups**, locate the backup in the list.
-  4. Open **Restore** for that row.
-  5. Choose the **Target Environment**.
-  6. If the target is **Live**, type `RESTORE` in the confirmation field (admins with the live-restore capability only).
-  7. Click **Restore Backup**.
-  8. When the request succeeds, you’ll see a confirmation. Restores run asynchronously — use **Check Status** with the operation ID to confirm it’s finished.
-
-  Your WordPress user email should match a MyKinsta company user (or the company should have only one user), so restore notifications can be assigned. Live restores require the `pde_kinsta_restore_live` capability (granted to administrators on activation).
-</Accordion>
-
-<Accordion title="How is the API key stored?">
-</Accordion>
+<AccordionGroup>
+  <Accordion>
+  </Accordion>
+</AccordionGroup>
