@@ -27,89 +27,66 @@ Turn confirmed giveaway entrants into FluentCRM contacts so you can follow up by
 
 **Auto-Add Verified Entrants**
 
-Grow your email list automatically when people confirm their giveaway entry.
+Your list grows on its own as people confirm their entries, so verified leads reach FluentCRM while the giveaway is still running.
 
 <AccordionGroup>
   <Accordion title="What are the requirements?">
-    - RafflePress installed and active
-    - FluentCRM installed and active
-    - FluentCRM module enabled in RafflePress Enhancer
-    - Auto-Add Verified Entrants enabled in that module’s settings
-    - A FluentCRM list selected and saved (tags optional)
+    - **RafflePress** and **FluentCRM** installed and active
+    - **RafflePress Enhancer → FluentCRM →** Enable
+    - **Auto-Add Verified Entrants →** Enable
+    - A FluentCRM list selected and saved (FluentCRM tags optional)
   </Accordion>
 
   <Accordion title="How do we enable this?">
-    1. Go to **Settings → PD Rafflepress**
-    2. Enable **Integrations**
-    3. Open **Settings** on the Integrations card
-    4. Enable **FluentCRM Sync**
-    5. Choose a **FluentCRM List** (required) and **FluentCRM Tags** (optional)
-    6. Click **Save Changes**
+    1. **RafflePress Enhancer → FluentCRM Module →** Enable
+    2. **FluentCRM Module →** Settings
+    3. **FluentCRM Module → Auto-Add Verified Entrants →** Enable
+    4. Choose a FluentCRM List (required) and FluentCRM Tags (optional)
+    5. Save Changes
   </Accordion>
 
   <Accordion title="What if an entrant is already an existing FluentCRM contact?">
-    If the contact already exists, FluentCRM **updates** them rather than creating a duplicate, and attaches the list/tags you pass in.
-
-    We then set a transient for one year. If that same contestant is verified/synced again, we skip calling FluentCRM.
+    - Auto-add runs only after the entrant is email verified in RafflePress (confirmation link or admin verify where supported)
+    - Only verified entrants are synced; unverified or invalid entries are not added
+    - Auto-added contacts are added to FluentCRM as Subscribed
+    - Optional FluentCRM tags you save here apply to all auto-added contacts (same list and tags for every giveaway)
+    - If the email already exists in FluentCRM, FluentCRM updates that contact and adds the list and tags you configured; it does not create a duplicate
+    - After a successful sync for an entrant, we skip calling FluentCRM again for that same entrant for up to one year (avoids repeat calls if they are verified again)
   </Accordion>
 
   <Accordion title="Are tags removed from existing FluentCRM contacts?">
-    No, our plugin is additive only; it does not remove tags.
+    No. The plugin is additive only; it does not remove tags from existing FluentCRM contacts.
   </Accordion>
 </AccordionGroup>
 
 **Import From Giveaways**
 
-Bring past giveaway entrants into FluentCRM in one step when you are ready to market to them.
+Past campaigns become reachable in one go, so older entrants are not left out of your marketing.
 
 <AccordionGroup>
   <Accordion title="What are the requirements?">
-    - RafflePress installed and active
-    - FluentCRM installed and active
-    - FluentCRM module enabled in RafflePress Enhancer
-    - Import run from the Import From Giveaways section on that module’s settings screen
-    - At least one giveaway, at least one entrant status, and a FluentCRM list chosen for that import (tags and other import options optional)
+    - **RafflePress** and **FluentCRM** installed and active
+    - **RafflePress Enhancer → FluentCRM →** Enable
+    - Import run from the Import From Giveaways section on the FluentCRM module settings screen
+    - At least one giveaway, at least one entrant status, and a FluentCRM list chosen for that import (FluentCRM tags and other import options optional)
   </Accordion>
 
   <Accordion title="How do we enable this?">
-    1. Go to **Settings → PD RafflePress**
-    2. Open **Integrations**
-    3. Scroll to **FluentCRM → Import From Giveaways** (no separate toggle; tool is always available when FluentCRM is active)
+    1. **RafflePress Enhancer → FluentCRM Module →** Enable
+    2. **FluentCRM Module →** Settings
+    3. **FluentCRM Module → Import From Giveaways →** Select giveaways, entrant statuses, a FluentCRM list, and any optional settings, then click Import Entrants.
   </Accordion>
 
   <Accordion title="How does this work?">
-    - Pick one or more giveaways (or all), contestant statuses, lists, optional tags, contact status (Subscribed / Pending), and Existing Contacts (Update / Skip)
-    - Runs in batches via AJAX; shows imported / skipped / failed counts when done
-    - Soft-deleted contestants are excluded; does not change live FluentCRM Sync settings or markers
-  </Accordion>
-</AccordionGroup>
-
-**FluentCRM (Tag Contacts By Giveaway)**
-
-Auto-sync verified RafflePress entrants with a per-giveaway FluentCRM tag.
-
-<AccordionGroup>
-  <Accordion title="What are the requirements?">
-    - RafflePress and FluentCRM active
-    - FluentCRM module enabled
-    - Auto-Add Verified Entrants on, with a FluentCRM List saved
-    - At least one giveaway and one FluentCRM tag
-  </Accordion>
-
-  <Accordion title="How do we enable this?">
-    1. **Pine Digital →** **RafflePress Enhancer → **Enable FluentCRM and open Settings
-    2. Turn on Auto-Add Verified Entrants
-    3. Set FluentCRM List (required) and FluentCRM Tags (optional, all giveaways)
-    4. Under Giveaway Tags, click Add Giveaway Tag, pick a giveaway and one tag
-    5. Save Changes
-  </Accordion>
-
-  <Accordion title="How does this work?">
-    - Runs only after Email Verified (confirmation link or admin verify)
-    - Unmapped giveaways get global tags only
-    - Existing FluentCRM tags are never removed
-    - Import From Giveaways does not use this map
-    - Changing a mapping later does not update already-synced contestants
+    - One-time import: pulls entrants from the giveaways you select into the FluentCRM list you choose for that run.
+    - Giveaways: select one or more giveaways to include.
+    - Entrant status: choose which statuses to import (email verified, unconfirmed, and/or invalid).
+    - FluentCRM list (required for that run) and optional FluentCRM tags apply to this import only; they are separate from the list and tags saved for auto-add.
+    - Contact status: set imported contacts as Subscribed or Pending.
+    - Existing contacts: Update (add list and tags to matching emails) or Skip (leave existing FluentCRM contacts unchanged).
+    - Import runs in batches and shows imported, skipped, and failed counts when finished.
+    - Soft-deleted contestants are excluded.
+    - Import does not change your auto-add settings or which entrants were already synced by auto-add.
   </Accordion>
 </AccordionGroup>
 
