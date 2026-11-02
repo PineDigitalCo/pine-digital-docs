@@ -5,7 +5,8 @@ description: "A WordPress plugin providing enhancements to the overall Elementor
 
 ## Requirements
 
-[Elementor Pro](https://be.elementor.com/visit/?bta=3394&brand=elementor) and [FluentCRM](https://fluentcrm.com/?ref=1360) (Free).
+- [Elementor](https://wordpress.org/plugins/elementor/) (Free)
+- [Elementor Pro](https://be.elementor.com/visit/?bta=3394&amp;brand=elementor) and [FluentCRM](https://fluentcrm.com/?ref=1360) (Free) are optional but required for some of the features.
 
 <Tip>
   Our clients get Elementor Pro and FluentCRM Pro for no additional cost.
@@ -18,22 +19,6 @@ description: "A WordPress plugin providing enhancements to the overall Elementor
 3. In WordPress: **Plugins → Add New → Upload Plugin**, upload **Elementor Enhancer**, and **activate it**.
 
 ## Features
-
-### **Newsletter Opt-in Field**
-
-Adds a Newsletter Opt-In checkbox to Elementor Pro forms. If the visitor checks it and submits, their email is subscribed in FluentCRM and added to the lists and tags configured on that field.
-
-<AccordionGroup>
-  <Accordion title="How do we get started?">
-    1. **Pine Digital → Elementor Enhancer**
-    2. **Newsletter Opt-In Field →** Enable
-    3. Edit a page in Elementor and add a form widget (v3 or v4 Atomic)
-       - **v3 Form:** In the Form Fields tab, add the **Newsletter Opt-In** field, and edit it to set the label, FluentCRM Lists, FluentCRM Tags, and any other options you need.
-       - **v4 Atomic Form:** Add the **Newsletter Opt-In** widget near the form, and edit it to set the label, FluentCRM Lists, FluentCRM Tags, and any other options you need.
-    4. Save 
-    5. Test form submissions with the **Newsletter Opt-In **box checked.
-  </Accordion>
-</AccordionGroup>
 
 ### **Sortable Template Columns**
 
@@ -91,7 +76,7 @@ Site owners can specify user IP addresses so that those users can completely byp
     5. _(Optional)_ Set a **Secret Code (Optional)** and click **Save Changes** so only the full preview link works; remove it later with **Stop Requiring a Secret Code on Preview Links** and **Save Changes**.
     6. Copy **Preview Link** and open it in the browser where you want to browse the live site (incognito works well for testing).
     7. When you’re done previewing, open **Stop Preview Link** (under **Technical Details**) in the same browser to end the session.
-    8. After you first enable the toggle, reload the WordPress dashboard or visit the front end once so bypass hooks register on the next request.
+    8. After you first enable the toggle, reload the WordPress dashboard or visit the front-end once so bypass hooks register on the next request.
     9. Verify: visitors without bypass still see Coming Soon; after the preview link (and secret, if set), you see the normal site. Purge or adjust cache if the locked page still shows for everyone.
   </Accordion>
 
@@ -126,5 +111,21 @@ Carousels are a great way to display different content in a small space, but Ele
 
   <Accordion title="Do all visitors see the same starting slide?">
     No. Each visitor gets their own rotation. When someone reloads the page, they move to the next slide in the carousel. Another visitor on the same page can be on a different slide at the same time. Clearing browsing data or using a different device starts that person’s sequence over from the beginning.
+  </Accordion>
+</AccordionGroup>
+
+### **Newsletter Opt-in Field**
+
+Adds a Newsletter Opt-In checkbox to Elementor Pro forms. If the visitor checks it and submits, their email is subscribed in FluentCRM and added to the lists and tags configured on that field.
+
+<AccordionGroup>
+  <Accordion title="How do we get started?">
+    1. **Pine Digital → Elementor Enhancer**
+    2. **Newsletter Opt-In Field →** Enable
+    3. Edit a page in Elementor and add a form widget (v3 or v4 Atomic)
+       - **v3 Form:** In the Form Fields tab, add the **Newsletter Opt-In** field, and edit it to set the label, FluentCRM Lists, FluentCRM Tags, and any other options you need.
+       - **v4 Atomic Form:** Add the **Newsletter Opt-In** widget near the form, and edit it to set the label, FluentCRM Lists, FluentCRM Tags, and any other options you need.
+    4. Save 
+    5. Test form submissions with the **Newsletter Opt-In **box checked.
   </Accordion>
 </AccordionGroup>
