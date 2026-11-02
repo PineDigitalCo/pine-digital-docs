@@ -6,6 +6,8 @@ description: "A WordPress plugin providing enhancements to the overall WordPress
 ## Requirements
 
 - [WordPress](https://wordpress.org/)
+- [FluentCRM](https://fluentcrm.com/?ref=1360) (Free) is optional but is required if you use the newsletter block from PreLaunch Kit to capture emails and want to integrate with this service.
+- [Mailchimp](https://mailchimp.com/) (Free) is optional but is required if you use the newsletter block from PreLaunch Kit to capture emails and want to integrate with this service.
 
 ## Installation
 
@@ -17,7 +19,7 @@ description: "A WordPress plugin providing enhancements to the overall WordPress
 
 ### Command Palette Links
 
-By default, the [WordPress Command Palette](https://wordpress.com/support/site-editor/command-palette/) presents results that can only be opened in the same browser window. Our plugin turns those results into more powerful links with right-click capabilities.
+By default, the [WordPress Command Palette](https://wordpress.com/support/site-editor/command-palette/) shows results that you can only open in the same browser window. Our plugin turns those results into more powerful links with right-click capabilities.
 
 ### Duplicate Posts
 
@@ -25,62 +27,17 @@ WordPress doesn’t provide a way to duplicate post types, so you either need a 
 
 ### Link Management
 
-Control site-wide link behavior and create smart links.
+Set how external links work across your site, and build ready-to-use links, including coupon links when you use [WooCommerce Enhancer](https://docs.pinedigital.co/woocommerce-enhancer).
 
 #### **Link Rules**
 
-Decide how links behave across your entire website. WordPress don’t provide a centralized location to manage outbound links, open links in new tabs, choose whether links are followed or not followed, etc.
+Set how external links behave across your whole site from one place. Turn on defaults for opening links in a new tab and telling search engines which links you endorse, then add exceptions for partners and pages that should stay different.
 
-**Link Management gives you this flexibility, so you have more control over your website's user experience, SEO, and more, as well as an additional way to monetize.**
+You get consistent visitor experience and SEO without editing posts one by one, and you can treat trusted or revenue links on their own terms while everything else follows your rules.
 
-**Globally Nofollow External Links**
-
-When this option is on, links that leave your site are marked so search engines do not treat them as endorsements. Links on your exception list are not changed.
-
-**Globally Open External Links in a New Tab**
-
-Choose to open all external links in a new browser tab.
-
-**Set Exclusions for External Links (Nofollow and New Tab)**
-
-Add links or domains that should never be modified, such as affiliate links, sponsor links, or URLs you want to keep exactly as written.
-
-**You can add:**
-
-- A full link, such as `https://example.com/page`
-- A domain, such as `example.com` (includes subdomains)
-- Part of a link, such as `/affiliate/`
-
-Links on this list are skipped entirely. Any automatic changes already applied to them are removed. You can manage the list in settings, import it from a file, or use both together.
-
-**Set Exclusions for Internal Link Nofollows**
-
-Add links or domains that should never be modified, such as affiliate links, sponsor links, or URLs you want to keep exactly as written.
-
-**Import an Exception List from a File**
-
-Instead of maintaining a long list in settings, you can store excluded URLs in a simple file.
-
-**Example format:**
-
-```json
-{
-  "urls": [
-    "https://example.com",
-    "https://another-site.com/page"
-  ]
-}
-```
-
-In the **Advanced area of Link Management**, you can browse for a file, create one in your theme, or enter a file path manually. For security, use a file on your site rather than a link from somewhere you do not trust.
-
-**Developer Filters**
-
-For custom setups, enable this feature to allow developers to extend exception lists or file paths in their code.
-
-**Database Update Tool**
-
-This tool permanently changes content in the database. You enter a specific URL, and it finds content that contains that URL and adds a nofollow directly to the HTML.
+- **Nofollow External Links:** Links that leave your site are marked so search engines do not treat them as endorsements.
+- **Open External Links in New Tab:** Keep visitors on your site while external pages open in a separate browser tab.
+- **External Link Exceptions:** Keep partner and trusted URLs under their own rules, while the rest of your site follows your defaults.
 
 <Note>
   This is a one-off cleanup or migration tool, not part of everyday use.
@@ -89,247 +46,258 @@ This tool permanently changes content in the database. You enter a specific URL,
 **Frequently Asked Questions (Link Rules)**
 
 <AccordionGroup>
-  <Accordion title="How do we set this up?">
-    Once the module is enabled, it’s super easy to configure the available options.
+  <Accordion title="How do we get started?">
+    Once **Link Management** is enabled on the WordPress Enhancer dashboard, open **Settings** on that module and go to **Link Rules**.
 
-    1. Under **Link Rules**, turn on the options you want:
+    1. Turn on only the options you want (everything is **off** by default):
        - **Nofollow External Links**
        - **Open External Links In New Tab**
-       - **Open Internal Links In New Tab**
-    2. Add excluded links and domains under **Exceptions**.
-    3. If needed, add domains under **Internal New Tab Exceptions**.
-    4. Open **Advanced** only if you need file import, bulk updates, or developer options.
-
-    _Everything starts **off** by default. Enable only what your site needs._
-  </Accordion>
-
-  <Accordion title="What does “Nofollow External Links” do?">
-    When this is on, links that go to other websites are marked so search engines do not treat them as endorsements of those sites. Links on your exception list are not changed.
+    2. Add partner or trusted URLs under **External Link Exceptions** if some external links should not follow those defaults.
+    3. Click **Save Changes**.
+    4. Open **Advanced** only if you need an exception list from a file, **Update Database** for a one-off site-wide fix, or **Developer Filters** for custom code. \_Enable only what your site needs. Most sites use the two toggles and optional exceptions; Advanced is optional.
   </Accordion>
 
   <Accordion title="What should I put on the Exceptions list?">
-    Any link or domain you want Link Management to leave completely alone. That might include affiliate links, sponsor links, links to your other sites, or any URL you do not want changed.
+    Add external links or domains you want **exempt from your Link Rules defaults** (new tab and do-not-endorse). Common examples include affiliate or sponsor links you treat differently, trusted partner sites, or another domain you own.
+
+    You can enter full URLs, domains, or partial paths (one per line).
   </Accordion>
 
-  <Accordion title="Will this change links while I am editing in WordPress?">
-    No, Link Management only affects what visitors see on the public site. It does not change how links appear in the WordPress dashboard or editor.
+  <Accordion title="Will this change links while I'm editing in WordPress?">
+    No. Link Rules change how links appear when your content is **shown to visitors**, not while you edit posts and pages in the dashboard. What you save in the editor stays as you wrote it.
+
+    The front-end preview may look like the live site. The **Update Database** option in Advanced is separate; it permanently changes the saved content in your database.
   </Accordion>
 
   <Accordion title="Do I need to go back and edit old posts?">
-    No, but in the very rare event that you do, use the Database Update Tool.
+    No. Link Rules apply to existing posts and pages when visitors view your site, so you do not need to re-save old content for new tab or do-not-endorse settings to take effect.
+
+    Use **Update Database** in Advanced only if you need to permanently update saved content for one specific URL across your site. That is uncommon and separate from everyday Link Rules.
   </Accordion>
 
-  <Accordion title="What is the Database Update Tool for?">
-    It is for updating links in content that was published before you enabled Link Management. Enter a specific URL, and the tool finds matching links in your posts and updates them in batches. On larger sites, you may need to run it more than once.
-  </Accordion>
+  <Accordion title="What is Update Database for?">
+    **Update Database** is a one-off tool for permanently fixing links in **saved** posts and page content. Enter a specific URL, and the tool finds posts that contain that URL and marks those links as "do not endorse" for search engines in the stored HTML.
 
-  <Accordion title="Can I import my exception list from a file?">
-    Yes, under the **Advanced** area, you can point to a file on your site or create one in your theme. This is useful if you have a long list of URLs to exclude. Use a file on your own site rather than a file hosted somewhere else.
+    It works in batches. On larger sites, run it again until no more matching posts remain. This process is separate from everyday Link Rules, which apply when visitors view your site without changing what you saved in the editor.
   </Accordion>
 
   <Accordion title="How can I tell if it is working?">
-    Enable the module, turn on the options you want, and visit a post, page, listing, etc., that contains links. Click a link to confirm whether it opens in a new tab. If you use the **Nofollow** option, inspect a few external links on the live page to confirm they are marked the way you expect.
+    Enable **Link Management**, turn on the Link Rules you want, and then open a **published** post, page, or listing on the **live site** (not in the editor).
+
+    Click an external link to see if it opens in a new tab when that option is on. If **Nofollow External Links** is on, check a few external links on the page and confirm they are marked "do not endorse" the way you expect.
+
+    If you added **External Link Exceptions**, test a matching link too. It should not follow your default rules.
+  </Accordion>
+
+  <Accordion title="Advanced Settings">
+    - **Exception list from a file:** Store trusted partner URLs in a simple file instead of a long list in settings. Those URLs work alongside anything you enter on screen. Pick a file in **JSON Preset File Path**, or add `exception-urls.json` to your child theme if you use one.
+    - **Developer filters:** Turn this feature on only if your developer extends the trusted URL list through custom code on the site.
+    - **Update database:** Finds a specific link across your posts and pages and updates the saved content to mark it as “do not endorse” for search engines. This change is permanent and separate from your normal link rules, so use it carefully.
+
+    <Note>
+      Update Database is a one-off cleanup or migration tool for fixing links across your site, not something you use for everyday link rules.
+    </Note>
   </Accordion>
 </AccordionGroup>
 
 #### Link Generator
 
-Stop hand-building links in a text editor. The Link Generator lives inside Link Management and updates as you type. Select a destination, set your options, and then copy the URL or full HTML when you are finished.
+Build links in WordPress Enhancer without hand-coding HTML. Pick a destination, set your options, and copy the **URL** or **HTML** when the live preview looks right.
 
-Use the **Hyperlink** tab for everyday links to pages, products, and custom addresses.
-
-Use the **Coupon** tab to build WooCommerce discount links that send shoppers to the right place with the code already in the URL.
+Use the **Hyperlink** options for everyday links to pages, products, or custom addresses. Use the **Coupon** options for WooCommerce discount links that send shoppers to the right page with the code in the URL.
 
 **Highlights**
 
-- **Live preview** so you see the link before you paste it anywhere
-- **Two tabs**: standard hyperlinks and WooCommerce coupon links
-- **Smart destinations**: pick Home, Shop, Cart, Checkout, any page, or any product from dropdowns
-- **Coupon links made easy**: choose a coupon and destination; the correct URL is built for you
-- **Add to Cart links**: send shoppers straight to the cart with a product and coupon in one click
-- **Copy ready HTML** with the right `target`, `rel`, and link options already set
-- **Optional tracking fields** for CSS classes and data attributes on your HTML links
-- Works with our **[WooCommerce Enhancer](https://docs.pinedigital.co/woo-commerce-enhancer)** plugin's **Smart Coupon Links** feature so discount links actually apply on your live store
+- **Live preview** as you build the link
+- **Quick destinations** such as Home, Shop, Cart, and Checkout, plus pages and products from dropdowns
+- **Coupon links** with a chosen coupon and destination (including add-to-cart style links for products on the Coupon tab)
+- **Copy URL or HTML** with new tab and “do not endorse” options already applied when you select them
+- **Optional tracking** classes and data attributes on HTML output
+- Works with [WooCommerce Enhancer](https://docs.pinedigital.co/woo-commerce-enhancer) **Smart Coupon Links** so discount links apply to your live store (enable that setting there; WooCommerce is required)
 
-**Base URL**
+<AccordionGroup>
+  <Accordion title="Base URL">
+    Choose where the link sends people, from common store pages to any page, product, or custom address.
 
-Where the link should go.
+    <table>
+      <colgroup>
+        <col width="100" />
+        <col width="498" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th>**Option**</th>
+          <th>**What it does**</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>**Custom**</td>
+          <td>Paste any full URL (your site or another site).</td>
+        </tr>
+        <tr>
+          <td>**Home**</td>
+          <td>Your site homepage.</td>
+        </tr>
+        <tr>
+          <td>**Shop**</td>
+          <td>Your WooCommerce shop page (if WooCommerce is active).</td>
+        </tr>
+        <tr>
+          <td>**Cart**</td>
+          <td>Your cart page.</td>
+        </tr>
+        <tr>
+          <td>**Checkout**</td>
+          <td>Your checkout page.</td>
+        </tr>
+        <tr>
+          <td>**Pages**</td>
+          <td>Any published page on your site (shown in a nested list).</td>
+        </tr>
+        <tr>
+          <td>**Products**</td>
+          <td>Any published product (links to the product page).</td>
+        </tr>
+      </tbody>
+    </table>
+  </Accordion>
 
-<table>
-  <colgroup>
-    <col width="100" />
-    <col width="498" />
-  </colgroup>
-  <thead>
-    <tr>
-      <th>**Option**</th>
-      <th>**What it does**</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>**Custom**</td>
-      <td>Paste any full URL (your site or another site).</td>
-    </tr>
-    <tr>
-      <td>**Home**</td>
-      <td>Your site homepage.</td>
-    </tr>
-    <tr>
-      <td>**Shop**</td>
-      <td>Your WooCommerce shop page (if WooCommerce is active).</td>
-    </tr>
-    <tr>
-      <td>**Cart**</td>
-      <td>Your cart page.</td>
-    </tr>
-    <tr>
-      <td>**Checkout**</td>
-      <td>Your checkout page.</td>
-    </tr>
-    <tr>
-      <td>**Pages**</td>
-      <td>Any published page on your site (shown in a nested list).</td>
-    </tr>
-    <tr>
-      <td>**Products**</td>
-      <td>Any published product (links to the product page).</td>
-    </tr>
-  </tbody>
-</table>
+  <Accordion title="Link Text">
+    What visitors see as the clickable words. It shows in the preview and in the HTML you copy.
 
-**Link Text  (Optional)**
+    If you leave it blank on the **Hyperlink** tab, the URL is used as the visible text. If you leave it blank on the **Coupon** tab, the coupon code is used instead. Add **Link Text** whenever you want custom wording.
+  </Accordion>
 
-The words people see and click on. This appears in the preview and in the HTML code output. If you leave it empty, the preview and HTML will use the URL itself as the visible text.
+  <Accordion title="Target">
+    Where the link opens when someone clicks it.
 
-**Target**
+    <table>
+      <colgroup>
+        <col width="133" />
+        <col width="483" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th>**Option**</th>
+          <th>**Plain English**</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>**Same Window**</td>
+          <td>Opens in the current tab (most common).</td>
+        </tr>
+        <tr>
+          <td>**New Window**</td>
+          <td>Opens in a new browser tab.</td>
+        </tr>
+        <tr>
+          <td>**Parent Frame**</td>
+          <td>This is for sites that use frames (rare).</td>
+        </tr>
+        <tr>
+          <td>**Top Frame**</td>
+          <td>This option is for sites that use frames (rare).</td>
+        </tr>
+      </tbody>
+    </table>
+  </Accordion>
 
-Where the link opens when clicked.
+  <Accordion title="Link Options">
+    Optional settings that adjust the link before you copy it. They apply to the preview and HTML Code output.
 
-<table>
-  <colgroup>
-    <col width="133" />
-    <col width="413" />
-  </colgroup>
-  <thead>
-    <tr>
-      <th>**Option**</th>
-      <th>**Plain English**</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>**Same Window**</td>
-      <td>Opens in the current tab (most common).</td>
-    </tr>
-    <tr>
-      <td>**New Window**</td>
-      <td>Opens in a new browser tab.</td>
-    </tr>
-    <tr>
-      <td>**Parent Frame**</td>
-      <td>For sites using frames (rare).</td>
-    </tr>
-    <tr>
-      <td>**Top Frame**</td>
-      <td>This is for sites that use frames (rare).</td>
-    </tr>
-  </tbody>
-</table>
+    <table>
+      <colgroup>
+        <col width="298" />
+        <col width="416" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th>**Option**</th>
+          <th>**What it does**</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>**Download Link**</td>
+          <td>Tells the browser to download the file instead of opening it (best for file links).</td>
+        </tr>
+        <tr>
+          <td>**Do Not Endorse (nofollow)**</td>
+          <td>Adds `nofollow` so search engines do not pass ranking credit through this link.</td>
+        </tr>
+        <tr>
+          <td>**Do Not Send Referrer (noreferrer)**</td>
+          <td>Hides which page the visitor came from.</td>
+        </tr>
+        <tr>
+          <td>**External Link**</td>
+          <td>Opens in a new tab and adds security-related attributes for links to other websites.</td>
+        </tr>
+        <tr>
+          <td>**Help Link**</td>
+          <td>Marks the link as a help link for browsers and assistive technologies.</td>
+        </tr>
+      </tbody>
+    </table>
+  </Accordion>
 
-**Link Options (Optional)**
+  <Accordion title="Tracking">
+    Add CSS classes and data attributes to the copied HTML for analytics or styling; they are not added to the URL field.
 
-Optional checkboxes that change how the link behaves:
+    <table>
+      <colgroup>
+        <col width="168" />
+        <col width="539" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th>**Field**</th>
+          <th>**What it does**</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>**HTML Class**</td>
+          <td>Add one or more CSS class names (separated by spaces). Useful for styling or analytics scripts. Example: `promo-link spring-sale`</td>
+        </tr>
+        <tr>
+          <td>**Data Attributes**</td>
+          <td>Add extra `data-*` attributes to the HTML link. Example: `data-campaign="spring-email"`</td>
+        </tr>
+      </tbody>
+    </table>
+  </Accordion>
 
-<table>
-  <colgroup>
-    <col width="298" />
-    <col width="416" />
-  </colgroup>
-  <thead>
-    <tr>
-      <th>**Option**</th>
-      <th>**What it does**</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>**Download Link**</td>
-      <td>Tells the browser to download the file instead of opening it (best for file links).</td>
-    </tr>
-    <tr>
-      <td>**Do Not Endorse (nofollow)**</td>
-      <td>Adds `nofollow` so search engines do not pass ranking credit through this link.</td>
-    </tr>
-    <tr>
-      <td>**Do Not Send Referrer (noreferrer)**</td>
-      <td>Hides which page the visitor came from.</td>
-    </tr>
-    <tr>
-      <td>**External Link**</td>
-      <td>Opens in a new tab and adds security-related attributes for links to other websites.</td>
-    </tr>
-    <tr>
-      <td>**Help Link**</td>
-      <td>Marks the link as a help link for browsers and assistive technologies.</td>
-    </tr>
-  </tbody>
-</table>
+  <Accordion title="HTML Code">
+    A ready-to-paste link with your text, address, and options already filled in. Click the field to select everything, or use Copy, then paste into:
 
-**Tracking (Optional)**
+    - Email templates
+    - WordPress custom HTML blocks
+    - Page builders that accept HTML
+    - Theme template files
+  </Accordion>
 
-<table>
-  <colgroup>
-    <col width="168" />
-    <col width="539" />
-  </colgroup>
-  <thead>
-    <tr>
-      <th>**Field**</th>
-      <th>**What it does**</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>**HTML Class**</td>
-      <td>Add one or more CSS class names (separated by spaces). Useful for styling or analytics scripts. Example: `promo-link spring-sale`</td>
-    </tr>
-    <tr>
-      <td>**Data Attributes**</td>
-      <td>Add extra `data-*` attributes to the HTML link. Example: `data-campaign="spring-email"`</td>
-    </tr>
-  </tbody>
-</table>
+  <Accordion title="URL">
+    The web address only, without HTML. Use for:
 
-**HTML Code**
+    - Social media posts
+    - SMS messages
+    - QR codes
+    - Any place that only accepts a plain link
+  </Accordion>
 
-A complete `<a>...</a>` tag. Click inside the field to select all, or use **Copy**. Paste into:
-
-- Email templates
-- WordPress custom HTML blocks
-- Page builders that accept HTML
-- Theme template files
-
-**URL**
-
-The web address only, without HTML. Use for:
-
-- Social media posts
-- SMS messages
-- QR codes
-- Any place that only accepts a plain link
-
-**Hyperlinks**
-
-These are normal links that do not apply a WooCommerce coupon. Use these links for navigation links, content links, downloads, and external sites.
+  <Accordion title="Hyperlinks">
+    Build standard links for your site and the web, without a discount code in the URL. Ideal for menus, blog posts, buttons, file downloads, and external partners.
+  </Accordion>
+</AccordionGroup>
 
 **Coupons**
 
 These links are for URLs that include a WooCommerce discount code. Use these links for promotions, email campaigns, and special offers.
 
 When you enable the [Smart Coupon Links](https://docs.pinedigital.co/woocommerce-enhancer#smart-coupon-links) feature in our [WooCommerce Enhancer](/woocommerce-enhancer) plugin⁣, coupon links apply discounts on your site. If it is off, the generator still builds the link, but visitors will not receive an automatic discount until you turn that setting on.
-
-**Frequently Asked Questions (Link Generator)**
 
 <AccordionGroup>
   <Accordion title="How do we build a normal link?">
@@ -383,14 +351,12 @@ When you enable the [Smart Coupon Links](https://docs.pinedigital.co/woocommerce
 
 ### PreLaunch Kit
 
-- A published page selected as the landing page
-- [FluentCRM](https://influencewp.com/deal/marketing/fluentcrm/) (Optional - For Lead Capture)
-- [Mailchimp](https://mailchimp.com/) (Optional - For Lead Capture)
+Coming Soon and Maintenance Mode with opt-in form blocks for FluentCRM and Mailchimp
 
 **Coming Soon / Maintenance Mode**
 
-- **Coming Soon** — Show visitors a “launching soon” page (and optionally collect emails) while telling search engines the site is still open for business.
-- **Maintenance Mode** — Show visitors an “under maintenance” page (and optionally collect emails) while telling search engines the site is temporarily closed.
+- **Coming Soon:** Show visitors a “launching soon” page (and optionally collect emails) while telling search engines the site is still open for business.
+- **Maintenance Mode:** Show visitors an “under maintenance” page (and optionally collect emails) while telling search engines the site is temporarily closed.
 - Show visitors a custom landing page instead of the rest of your site
 - Let certain user roles (like Administrator) keep full access
 - Allow specific IP addresses (handy for your team or office)
@@ -405,22 +371,22 @@ You can use any solution of your choosing for building your landing page and for
 - Built-in honeypot SPAM protection
 
 <AccordionGroup>
-  <Accordion title="How do we set up PreLaunch Kit?">
-    1. Download the latest **WordPress Enhancer** version from [your Pine Digital account](https://pinedigital.co/account/downloads).
-    2. **Pine Digital → PreLaunch Kit → Settings → **Enable and configure
-    3. **Response Mode → **Choose **Coming Soon** or **Maintenance Mode**
-    4. **Exclusions → Exclude User Roles →** Optionally, choose the desired roles
-    5. **Exclude IP Addresses →** Optionally, enter the desired IP addresses
-    6. **Bypass URL → **Optionally, enter a custom bypass URL
-    7. Click **Save Changes**
-    8. Build your landing page with the WordPress block editor
-    9. Insert the **Newsletter** block  (or search for “newsletter”)
-    10. **Newsletter Form** block **→ **In the sidebar, choose the platform:
-        - **Mailchimp**—Enter your API key and list/audience ID. The key is stored in WordPress options keyed by list ID and is not left in front-end HTML after save/render
-        - **FluentCRM**—Choose a **FluentCRM Tag** and **FluentCRM List** (or leave empty). If FluentCRM isn’t active, you can type a tag/list slug manually
-    11. Adjust layout (row vs. column, stack on mobile), success/already-subscribed messages, and colors as needed
-    12. Publish your landing page
-    13. **PreLaunch Kit → Landing Page →** Choose your landing page
-    14. Test the email capture
+  <Accordion title="How do we get started with PreLaunch Kit?">
+    1. Go to **Pine Digital → WordPress Enhancer** and enable the **PreLaunch Kit** module.
+    2. Open **Settings** on the PreLaunch Kit card.
+    3. Turn on **Activate Coming Soon / Maintenance**.
+    4. Under **Response Mode**, choose **Coming Soon** or **Maintenance Mode**.
+    5. _(Optional)_ Under **Exclusions**, set **Exclude User Roles**, **Exclude IP Addresses**, and/or **Bypass URL** if your team needs access while the site is gated.
+    6. Click **Save Changes**.
+    7. Create your landing page in the block editor.
+    8. Add the **Newsletter Form** block (search for “newsletter” in the block inserter).
+    9. In the block sidebar, choose your email platform:
+       - **Mailchimp:** Enter your API key and audience/list ID.
+       - **FluentCRM:** Choose a **FluentCRM Tag** and **FluentCRM List**, or leave them empty. If FluentCRM is not active, you can enter tag/list slugs manually.
+    10. Adjust layout, messages, and colors as needed, then **publish** the page.
+    11. Return to **PreLaunch Kit → Settings**, set **Landing Page** to that page, and click **Save Changes** again.
+    12. Submit a test signup on the live page (use a private window if you are logged in as an admin).
+
+    _Visitors will not see the coming soon or maintenance screen until a landing page is selected and saved._
   </Accordion>
 </AccordionGroup>
